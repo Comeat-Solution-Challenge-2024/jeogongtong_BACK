@@ -5,6 +5,7 @@ import com.comeat.jeogongtong.study.entity.StudyEntity;
 import lombok.*;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -22,7 +23,7 @@ public class StudyDto {
     private int rankerAnswer;
     private String intro;
 
-    //    private LocalDateTime studyCreatedTime;
+    private LocalDate CreatedTime;
 //    private LocalDateTime studyUpdatedTime;
     public static StudyDto toStudyDto(StudyEntity studyEntity) {
         StudyDto studyDto = new StudyDto();
@@ -34,6 +35,7 @@ public class StudyDto {
         studyDto.setRankerAsk(studyEntity.getRankerAsk());
         studyDto.setRankerAnswer(studyEntity.getRankerAnswer());
         studyDto.setIntro(studyEntity.getIntro());
+        studyDto.setCreatedTime(studyEntity.getCreatedTime());
         return studyDto;
     }
 }

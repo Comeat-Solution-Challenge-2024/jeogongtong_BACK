@@ -6,8 +6,7 @@
 </head>
 <body>
 <button onclick="saveReq()">스터디 만들기</button>
-<!--<a href="/study-clubs/regist">스터디 만들기</a>-->
-<button onclick="listReq()">스터디 목록</button>
+<!--<button onclick="listReq()">스터디 목록</button>-->
 <table>
 <tr>
     <th>나의 공부방</th>
@@ -15,6 +14,7 @@
 <tr th:each="study: ${studyList}">
     <!--스터디 명만 확인 가능-->
     <td><a th:href="@{|/study/${study.studyId}|}" th:text="${study.name}"></a></td>
+    <td th:text="*{#temporals.format(study.CreatedTime, 'yyyy-MM-dd')}"></td>
 </tr>
 </table>
 
@@ -26,8 +26,8 @@
     const saveReq = () => {
         location.href = "/study-clubs/regist";
     }
-    const listReq = () => {
-        location.href = "/study-clubs/";
-    }
+    // const listReq = () => {
+    //     location.href = "/study-clubs/";
+    // }
 </script>
 </html>

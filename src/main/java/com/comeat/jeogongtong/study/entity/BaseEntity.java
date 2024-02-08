@@ -1,4 +1,3 @@
-/*
 package com.comeat.jeogongtong.study.entity;
 
 
@@ -10,7 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -18,10 +17,6 @@ import java.time.LocalDateTime;
 public class BaseEntity {
     @CreationTimestamp
     @Column(updatable = false)
-    private LocalDateTime createdTime;
-
-    @UpdateTimestamp
-    @Column(insertable = false)
-    private LocalDateTime updatedTime;
+    private LocalDate createdTime;
 }
-*/
+

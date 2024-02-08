@@ -12,7 +12,7 @@ import java.sql.Date;
 @Getter
 @Setter
 @Table(name = "study")
-public class StudyEntity {
+public class StudyEntity extends BaseEntity{
 //    public class StudyEntity extends BaseEntity : 오류발생
     @Id //pk 컬럼 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY) //increment_auto (숫자 자동 증가)
@@ -32,6 +32,8 @@ public class StudyEntity {
     private int rankerAnswer;
     @Column(length = 500)
     private String intro;
+
+
 
 
     public static StudyEntity toRegistEntity(StudyDto studyDto) {
