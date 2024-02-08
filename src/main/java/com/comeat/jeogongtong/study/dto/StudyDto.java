@@ -1,6 +1,7 @@
 package com.comeat.jeogongtong.study.dto;
 
 
+import com.comeat.jeogongtong.study.entity.StudyEntity;
 import lombok.*;
 
 import java.sql.Date;
@@ -20,7 +21,19 @@ public class StudyDto {
     private int rankerAsk; //질의응답 타입을 int로?
     private int rankerAnswer;
     private String intro;
-//    private LocalDateTime studyCreatedTime;
-//    private LocalDateTime studyUpdatedTime;
 
+    //    private LocalDateTime studyCreatedTime;
+//    private LocalDateTime studyUpdatedTime;
+    public static StudyDto toStudyDto(StudyEntity studyEntity) {
+        StudyDto studyDto = new StudyDto();
+        studyDto.setStudyId(studyEntity.getStudyId());
+        studyDto.setName(studyEntity.getName());
+        studyDto.setCategory(studyEntity.getCategory());
+        studyDto.setBook(studyEntity.getBook());
+        studyDto.setPeriod(studyEntity.getPeriod());
+        studyDto.setRankerAsk(studyEntity.getRankerAsk());
+        studyDto.setRankerAnswer(studyEntity.getRankerAnswer());
+        studyDto.setIntro(studyEntity.getIntro());
+        return studyDto;
+    }
 }

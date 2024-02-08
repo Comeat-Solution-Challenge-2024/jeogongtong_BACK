@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+<table>
+    <tr>
+<!--        <th>id</th>-->
+        <th>스터디명</th>
+<!--        <th>스터디명(||쓰지 않은 경우)</th>-->
+<!--        <th>방장</th>-->
+<!--        <th>date</th>-->
+<!--        <th>hits</th>-->
+    </tr>
+    <tr th:each="study: ${studyList}">
+<!--        <스터디 명만 확인 가능-->
+        <td><a th:href="@{|/study/${study.studyId}|}" th:text="${study.name}"></a></td>
+<!--        <td><a th:href="@{/study/${study.studyId}|}" th:text="${study.name}"></a></td>-->
+    </tr>
+</table>
+</body>
+</html>

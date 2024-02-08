@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>index</title>
 </head>
 <body>
 <button onclick="saveReq()">스터디 만들기</button>
-<a href="/study-clubs/regist">스터디 만들기</a>
+<!--<a href="/study-clubs/regist">스터디 만들기</a>-->
 <button onclick="listReq()">스터디 목록</button>
+<table>
+<tr>
+    <th>나의 공부방</th>
+</tr>
+<tr th:each="study: ${studyList}">
+    <!--스터디 명만 확인 가능-->
+    <td><a th:href="@{|/study/${study.studyId}|}" th:text="${study.name}"></a></td>
+</tr>
+</table>
+
 </body>
 <script>
     //  function saveReq() {
