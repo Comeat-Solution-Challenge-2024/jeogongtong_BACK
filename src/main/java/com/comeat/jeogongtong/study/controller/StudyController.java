@@ -24,14 +24,7 @@ public class StudyController {
     public String regist(@ModelAttribute StudyDto studyDto) {
         System.out.println("studyDto = " + studyDto);
         studyService.regist(studyDto);
-        return "index";
-    }
-
-    @GetMapping("/")
-    public String findAll(Model model) { // 전체 목록을 DB로부터 가져와야함
-        //DB에서 전체 게시글 데이터를 가져와서 list.html에 보여준다.
-        List<StudyDto> studyDtoList = studyService.findAll();
-        model.addAttribute("studyList", studyDtoList);
-        return "index";
+        return "redirect:/"; //홈으로 돌아가기
     }
 }
+
