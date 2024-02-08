@@ -23,6 +23,4 @@ public class StudyController {
         studyService.regist(studyDto);
         return "index";
     }
-
-
 }

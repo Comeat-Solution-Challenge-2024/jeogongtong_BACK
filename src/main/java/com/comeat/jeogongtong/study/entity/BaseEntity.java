@@ -1,3 +1,4 @@
+/*
 package com.comeat.jeogongtong.study.entity;
 
 
@@ -23,3 +24,4 @@ public class BaseEntity {
     @Column(insertable = false)
     private LocalDateTime updatedTime;
 }
+*/

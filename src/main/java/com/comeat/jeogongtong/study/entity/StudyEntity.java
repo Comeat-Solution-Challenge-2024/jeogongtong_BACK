@@ -12,10 +12,11 @@ import java.sql.Date;
 @Getter
 @Setter
 @Table(name = "study")
-public class StudyEntity extends BaseEntity{
+public class StudyEntity {
+//    public class StudyEntity extends BaseEntity : 오류발생
     @Id //pk 컬럼 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY) //increment_auto (숫자 자동 증가)
-    private Long id;
+    private Long studyId;
     @Column(length = 100,nullable = false) //defalut = 크기 : 255, null 가능상태
     private String name;
     @Column
@@ -30,18 +31,18 @@ public class StudyEntity extends BaseEntity{
     @Column
     private int rankerAnswer;
     @Column(length = 500)
-    private String inform;
+    private String intro;
 
 
     public static StudyEntity toRegistEntity(StudyDto studyDto) {
         StudyEntity studyEntity = new StudyEntity();
         studyEntity.setName(studyDto.getName());
         studyEntity.setBook(studyDto.getBook());
-        studyEntity.setCategory(studyEntity.getCategory());
-        studyEntity.setPeriod(studyEntity.getPeriod());
+        studyEntity.setCategory(studyDto.getCategory());
+        studyEntity.setPeriod(studyDto.getPeriod());
         studyEntity.setRankerAsk(studyDto.getRankerAsk());
-        studyEntity.setRankerAnswer(studyEntity.getRankerAnswer());
-        studyEntity.setInform(studyEntity.getInform());
+        studyEntity.setRankerAnswer(studyDto.getRankerAnswer());
+        studyEntity.setIntro(studyDto.getIntro());
 
         return studyEntity;
     }
