@@ -32,4 +32,13 @@ public class StudyService {
         }
         return studyDtoList;
     }
+
+    public List<StudyDto> search(String keyword) {
+        List<StudyEntity> studyEntityList = studyRepository.findByNameContainingIgnoreCase(keyword);
+        List<StudyDto> studyDtoList = new ArrayList<>();
+        for (StudyEntity studyEntity : studyEntityList) {
+            studyDtoList.add(StudyDto.toStudyDto(studyEntity));
+        }
+        return studyDtoList;
+    }
 }

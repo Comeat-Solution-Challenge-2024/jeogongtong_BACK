@@ -1,0 +1,36 @@
+<!-- search_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+<form action="/study-clubs/search" method="post">
+    <input type="text" name="keyword" placeholder="Enter keyword">
+    <button type="submit">Search</button>
+</form>
+<!-- 이전 검색어 목록 표시 -->
+<!--<h4>최근 검색</h4>-->
+<!--<ul>-->
+<!--    <li th:each="recentSearch : ${recentSearches}" th:text="${recentSearch}"></li>-->
+<!--</ul>-->
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Created Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Loop through studyList and display each study -->
+    <th:block th:each="study : ${studyList}">
+        <tr>
+            <td th:text="${study.name}"></td>
+            <td th:text="${study.createdTime}"></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>

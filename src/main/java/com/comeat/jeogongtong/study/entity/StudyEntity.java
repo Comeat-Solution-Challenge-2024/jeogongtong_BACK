@@ -33,9 +33,6 @@ public class StudyEntity extends BaseEntity{
     @Column(length = 500)
     private String intro;
 
-
-
-
     public static StudyEntity toRegistEntity(StudyDto studyDto) {
         StudyEntity studyEntity = new StudyEntity();
         studyEntity.setName(studyDto.getName());

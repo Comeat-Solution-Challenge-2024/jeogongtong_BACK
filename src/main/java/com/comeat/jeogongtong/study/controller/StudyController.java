@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,5 +27,29 @@ public class StudyController {
         studyService.regist(studyDto);
         return "redirect:/"; //홈으로 돌아가기
     }
+
+    @GetMapping("/search")
+    public String searchForm() {
+        return "search"; // 검색 폼 페이지로 이동
+    }
+
+    @PostMapping("/search")
+    public String search(@RequestParam String keyword, Model model) {
+        List<StudyDto> studyList = studyService.search(keyword);
+        model.addAttribute("studyList", studyList);
+
+        // 최근 검색어를 세션에 저장
+//        List<String> recentSearches = new ArrayList<>();
+//        recentSearches.add(keyword);
+//        model.addAttribute("recentSearches", recentSearches);
+
+        return "search_result"; // 검색 결과 페이지로 이동
+    }
+
+/*    @ModelAttribute("recentSearches")
+    public List<String> recentSearches() {
+        // 세션에서 최근 검색어 목록을 가져와서 모델에 추가
+        return new ArrayList<>();
+    }*/
 }
 
