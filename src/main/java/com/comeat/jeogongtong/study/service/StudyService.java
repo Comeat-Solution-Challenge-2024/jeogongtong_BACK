@@ -41,4 +41,10 @@ public class StudyService {
         }
         return studyDtoList;
     }
+
+    public StudyDto findById(Long studyId) {
+        StudyEntity studyEntity = studyRepository.findById(studyId)
+                .orElseThrow(() -> new RuntimeException("Study not found with id: " + studyId));
+        return StudyDto.toStudyDto(studyEntity);
+    }
 }

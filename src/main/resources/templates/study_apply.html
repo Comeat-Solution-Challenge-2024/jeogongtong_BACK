@@ -1,21 +1,21 @@
-<!-- study_detail.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>스터디 신청</title>
 </head>
 <body>
 <h1>Study Detail</h1>
-<p>Study Name: {{ studyDto.name }}</p>
-<p>Category: {{ studyDto.category }}</p>
-<p>Book: {{ studyDto.book }}</p>
-<p>Setting Period: {{ studyDto.settingPeriod }}</p>
-<p>Intro: {{ studyDto.intro }}</p>
+<p>Study Name: <span th:text="${studyDto.name}"></span></p>
+<p>Category: <span th:text="${studyDto.category}"></span></p>
+<p>Book: <span th:text="${studyDto.book}"></span></p>
+<p>Setting Period: <span th:text="${studyDto.settingPeriod}"></span></p>
+<p>Intro: <span th:text="${studyDto.intro}"></span></p>
 <!-- 여기에 스터디 신청 버튼 추가 -->
 <form action="/study-clubs/apply" method="post">
-    <input type="hidden" name="studyId" value="{{ studyDto.studyId }}">
-    <button type="submit">Apply</button>
+    <input type="hidden" name="studyId" th:value="${studyDto.studyId}">
+    <button type="submit">등록</button>
 </form>
 </body>
 </html>
+
