@@ -18,7 +18,7 @@ public class StudyDto {
     private String category;
     private String name;
     private String book;
-    private int period; // 기한 (일단 int로)
+    private int settingPeriod; // 기한 (일단 int로)
     private int rankerAsk; //질의응답 타입을 int로?
     private int rankerAnswer;
     private String intro;
@@ -31,7 +31,7 @@ public class StudyDto {
         studyDto.setName(studyEntity.getName());
         studyDto.setCategory(studyEntity.getCategory());
         studyDto.setBook(studyEntity.getBook());
-        studyDto.setPeriod(studyEntity.getPeriod());
+        studyDto.setSettingPeriod(studyEntity.getSettingPeriod());
         studyDto.setRankerAsk(studyEntity.getRankerAsk());
         studyDto.setRankerAnswer(studyEntity.getRankerAnswer());
         studyDto.setIntro(studyEntity.getIntro());

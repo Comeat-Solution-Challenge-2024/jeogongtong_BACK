@@ -11,7 +11,7 @@ import java.sql.Date;
 @Entity
 @Getter
 @Setter
-@Table(name = "study")
+@Table(name = "study", schema = "comeat")
 public class StudyEntity extends BaseEntity{
 //    public class StudyEntity extends BaseEntity : 오류발생
     @Id //pk 컬럼 지정
@@ -25,7 +25,7 @@ public class StudyEntity extends BaseEntity{
     @Column //nullable = false : 에러발생
     private String category;
     @Column(nullable = false)
-    private int period;
+    private int settingPeriod;
     @Column
     private int rankerAsk; //질의응답 타입을 int로?
     @Column
@@ -38,7 +38,7 @@ public class StudyEntity extends BaseEntity{
         studyEntity.setName(studyDto.getName());
         studyEntity.setBook(studyDto.getBook());
         studyEntity.setCategory(studyDto.getCategory());
-        studyEntity.setPeriod(studyDto.getPeriod());
+        studyEntity.setSettingPeriod(studyDto.getSettingPeriod());
         studyEntity.setRankerAsk(studyDto.getRankerAsk());
         studyEntity.setRankerAnswer(studyDto.getRankerAnswer());
         studyEntity.setIntro(studyDto.getIntro());
