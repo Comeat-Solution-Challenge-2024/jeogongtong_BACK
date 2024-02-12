@@ -11,7 +11,7 @@ import java.sql.Date;
 @Entity
 @Getter
 @Setter
-@Table(name = "study", schema = "comeat")
+@Table(name = "study")
 public class StudyEntity extends BaseEntity{
 //    public class StudyEntity extends BaseEntity : 오류발생
     @Id //pk 컬럼 지정

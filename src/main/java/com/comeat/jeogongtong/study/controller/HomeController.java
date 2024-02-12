@@ -19,5 +19,4 @@ public class HomeController {
         model.addAttribute("studyList", studyDtoList);
         return "index";
     }
-
 }
