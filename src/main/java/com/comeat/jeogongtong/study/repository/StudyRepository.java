@@ -10,9 +10,4 @@ import java.util.List;
 
 public interface StudyRepository extends JpaRepository<StudyEntity, Long> {
     List<StudyEntity> findByNameContainingIgnoreCase(String keyword);
-    // update board_table set board_hits=board_hits+1 where id=?
-//    @Modifying
-//    @Query(value = "update StudyEntity b set b.studyHits=b.studyHits+1 where b.id=:id")
-//    void updateHits(@Param("id") Long id);
-
 }

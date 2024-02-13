@@ -17,13 +17,13 @@ import java.util.Objects;
 public class StudyMemberEntity {
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", referencedColumnName = "member_id", insertable = false, updatable = false)
+    @JoinColumn(name = "member_id", insertable = false, updatable = false)
     private MemberEntity member;
 
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "study_id", insertable = false, updatable = false)
-    private StudyEntity study; //name = DB내 외래키 컬럼 이름 반영, referencedColumnName은 엔티티의 @Id의 필드이름을 반영
+    private StudyEntity study; 
 
     @Column(name = "weektime")
     private Time weektime;

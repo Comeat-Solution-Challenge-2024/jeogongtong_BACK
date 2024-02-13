@@ -9,7 +9,7 @@
 <button onclick="loginReq()">Login</button>
 <button onclick="saveReq()">스터디 만들기</button>
 <button onclick="listReq()">스터디 검색</button>
-<a th:if="${member != null}" th:href="@{|/member/${member.member_id}|}">마이페이지</a>
+<a th:if="${member != null}" th:href="@{|/member/${member.memberId}|}">마이페이지</a>
 <table>
 <tr>
     <th>나의 공부방</th>

@@ -17,8 +17,8 @@ public class MemberService {
         Optional<MemberEntity> byMemberEmail = memberRepository.findByEmail(memberDto.getEmail());
         if (byMemberEmail.isPresent()){
             MemberEntity memberEntity = byMemberEmail.get();
-            MemberDto dto = MemberDto.toMemberDto(memberEntity);
-            return dto;
+            MemberDto loginMember = MemberDto.toMemberDto(memberEntity);
+            return loginMember;
         } else return null;
     }
 

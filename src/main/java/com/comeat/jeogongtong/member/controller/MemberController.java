@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/member")
 public class MemberController {
     private final MemberService memberService;
-    @GetMapping("/{member_id}")
-    public String findById(@PathVariable Long member_id, Model model){
-        MemberDto memberDto = memberService.findById(member_id);
+    @GetMapping("/{memberId}")
+    public String findById(@PathVariable Long memberId, Model model){
+        MemberDto memberDto = memberService.findById(memberId);
         model.addAttribute("member",memberDto);
         return "my_page";
     }

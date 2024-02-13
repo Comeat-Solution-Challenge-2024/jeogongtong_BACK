@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class MemberDto {
-    private Long member_id;
+    private Long memberId;
     private String nickname;
     private int point;
     private String tier;
@@ -17,7 +17,7 @@ public class MemberDto {
 
     public static MemberDto toMemberDto(MemberEntity memberEntity){
         MemberDto memberDto = new MemberDto();
-        memberDto.setMember_id(memberEntity.getMember_id());
+        memberDto.setMemberId(memberEntity.getMemberId());
         memberDto.setNickname(memberEntity.getNickname());
         memberDto.setPoint(memberEntity.getPoint());
         memberDto.setTier(memberEntity.getTier());
