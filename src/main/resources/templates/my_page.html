@@ -1,24 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>마이페이지</title>
+    <!-- 여기에 필요한 CSS 스타일을 추가하세요 -->
 </head>
 <body>
-<table>
-    <tr>
-        <th>id</th>
-        <th>email</th>
-        <th>nickname</th>
-<!--        <th></th>-->
-    </tr>
-    <tr>
-        <td th:text="${member.member_id}"></td>
-        <td th:text="${member.email}"></td>
-        <td th:text="${member.nickname}"></td>
-<!--        <td th:text="${member.memberName}"></td>-->
-    </tr>
-</table>
+<header>
+    <h1>마이페이지</h1>
+</header>
+<section>
+    <h2>닉네임</h2>
+    <p th:text="${member.nickname}">ㅁㅁㅁㅁ</p>
+</section>
+<section>
+    <h2>등급/포인트</h2>
+    <p th:text="${member.tier} + ' / ' + ${member.point} + 'p'">320p</p>
+</section>
+<section>
+    <h2>스터디 랭킹</h2>
+<!--    <ul>-->
+<!--        <li>알고리즘 <span th:text="${member.algorithmRank}">11위</span></li>-->
+<!--        <li>SQLD <span th:text="${member.sqldRank}">7위</span></li>-->
+<!--        <li>코딩테스트 준비 <span th:text="${member.codingTestPrepRank}">23위</span></li>-->
+<!--    </ul>-->
+</section>
+<section>
+    <h2>내 계정</h2>
+    <p th:text="${member.email}">eaaaaa@naver.com</p>
+</section>
+<footer>
+    <button onclick="logout()">로그아웃</button>
+</footer>
+
+<script>
+     function logout() {
+        // 로그아웃 처리를 위한 JavaScript 코드
+        // 예: location.href = '/logout';
+     }
+</script>
 </body>
 </html>
