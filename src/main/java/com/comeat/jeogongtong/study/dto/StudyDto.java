@@ -18,7 +18,7 @@ public class StudyDto {
     private String category;
     private String name;
     private String book;
-    private int settingPeriod; // 기한 (일단 int로)
+    private String settingPeriod; // 기한 (일단 int로)
     private int rankerAsk; //질의응답 타입을 int로?
     private int rankerAnswer;
     private String intro;

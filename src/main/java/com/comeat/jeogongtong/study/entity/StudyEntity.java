@@ -25,7 +25,7 @@ public class StudyEntity extends BaseEntity{
     @Column //nullable = false : 에러발생
     private String category;
     @Column(nullable = false)
-    private int settingPeriod;
+    private String settingPeriod;
     @Column
     private int rankerAsk; //질의응답 타입을 int로?
     @Column

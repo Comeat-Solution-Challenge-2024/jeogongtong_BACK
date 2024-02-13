@@ -1,7 +1,7 @@
-package com.comeat.jeogongtong.study.controller;
+package com.comeat.jeogongtong.member.controller;
 
-import com.comeat.jeogongtong.study.dto.MemberDto;
-import com.comeat.jeogongtong.study.service.MemberService;
+import com.comeat.jeogongtong.member.dto.MemberDto;
+import com.comeat.jeogongtong.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

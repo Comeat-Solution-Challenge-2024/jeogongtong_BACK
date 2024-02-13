@@ -1,6 +1,6 @@
-package com.comeat.jeogongtong.study.entity;
+package com.comeat.jeogongtong.member.entity;
 
-import com.comeat.jeogongtong.study.dto.MemberDto;
+import com.comeat.jeogongtong.member.dto.MemberDto;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,7 +18,7 @@ public class MemberEntity {
     @Column
     private int point;
     @Column
-    private String tear;
+    private String tier;
     @Column
     private String email;
 
@@ -26,7 +26,7 @@ public class MemberEntity {
         MemberEntity memberEntity = new MemberEntity();
         memberEntity.setNickname(memberDto.getNickname());
         memberEntity.setPoint(memberDto.getPoint());
-        memberEntity.setTear(memberDto.getTear());
+        memberEntity.setTier(memberDto.getTier());
         memberEntity.setEmail(memberDto.getEmail());
         return memberEntity;
     }

@@ -1,8 +1,8 @@
-package com.comeat.jeogongtong.study.service;
+package com.comeat.jeogongtong.member.service;
 
-import com.comeat.jeogongtong.study.dto.MemberDto;
-import com.comeat.jeogongtong.study.entity.MemberEntity;
-import com.comeat.jeogongtong.study.repository.MemberRepository;
+import com.comeat.jeogongtong.member.dto.MemberDto;
+import com.comeat.jeogongtong.member.entity.MemberEntity;
+import com.comeat.jeogongtong.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
