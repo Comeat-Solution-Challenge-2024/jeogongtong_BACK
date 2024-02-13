@@ -1,37 +1,46 @@
+/*
 package com.comeat.jeogongtong.study.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Value;
+import lombok.ToString;
 
+import java.io.Serializable;
 import java.sql.Time;
+import java.sql.Timestamp;
 
 @Entity
 @Getter
 @Setter
 @Table(name = "study_member")
 public class StudyMemberEntity {
-    @EmbeddedId
-    private StudyMemberId id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "study_member_id")
+    private Long studyMemberId;
 
-    @ManyToOne
-    @MapsId("studyId")
-    @JoinColumn(name = "study_id")
-    private StudyEntity studyEntity;
+    @Column(name = "member_id")
+    private Long memberId;
 
-    @ManyToOne
-    @MapsId("memberId")
-    @JoinColumn(name = "member_id")
-    private MemberEntity memberEntity;
+    @Column(name = "study_id")
+    private Long studyId;
 
     @Column(name = "weektime")
-    private Time weektime;
+    private Timestamp weektime;
 
     @Column(name = "rank")
     private String rank;
 
     @Column(name = "state")
     private String state;
-}
 
+    @ManyToOne
+    @JoinColumn(name = "member_id", referencedColumnName = "member_id")
+    private MemberEntity memberEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "study_id", referencedColumnName = "studyId")
+    private StudyEntity studyEntity;
+}
+*/

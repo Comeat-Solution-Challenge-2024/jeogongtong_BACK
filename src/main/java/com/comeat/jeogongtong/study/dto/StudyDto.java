@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor // 기본생성자
 @AllArgsConstructor // 모든 필드를 매개변수로 하는 생성자
 public class StudyDto {
-    private Long studyId;
+    private Long study_id;
     private String category;
     private String name;
     private String book;
@@ -27,7 +27,7 @@ public class StudyDto {
 //    private LocalDateTime studyUpdatedTime;
     public static StudyDto toStudyDto(StudyEntity studyEntity) {
         StudyDto studyDto = new StudyDto();
-        studyDto.setStudyId(studyEntity.getStudyId());
+        studyDto.setStudy_id(studyEntity.getStudy_id());
         studyDto.setName(studyEntity.getName());
         studyDto.setCategory(studyEntity.getCategory());
         studyDto.setBook(studyEntity.getBook());

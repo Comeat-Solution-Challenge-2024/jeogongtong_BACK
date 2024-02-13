@@ -46,12 +46,6 @@ public class StudyController {
         return "search_result"; // 검색 결과 페이지로 이동
     }
 
-/*    @ModelAttribute("recentSearches")
-    public List<String> recentSearches() {
-        // 세션에서 최근 검색어 목록을 가져와서 모델에 추가
-        return new ArrayList<>();
-    }*/
-
     @GetMapping("/apply/{studyId}")
     public String detail(@PathVariable Long studyId, Model model){
         StudyDto studyDto = studyService.findById(studyId);
