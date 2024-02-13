@@ -16,7 +16,8 @@ public class StudyEntity extends BaseEntity{
 //    public class StudyEntity extends BaseEntity : 오류발생
     @Id //pk 컬럼 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY) //increment_auto (숫자 자동 증가)
-    private Long study_id; //study_id
+    @Column(name = "study_id")
+    private Long studyId; //study_id
     @Column(length = 100,nullable = false)
     private String name;
     @Column

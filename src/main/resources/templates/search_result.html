@@ -27,6 +27,7 @@
     <th:block th:each="study : ${studyList}">
         <tr>
             <td><a th:href="@{/study-clubs/apply/{studyId}(studyId=${study.studyId})}" th:text="${study.name}"></a></td>
+
             <td th:text="${study.createdTime}"></td>
         </tr>
     </th:block>
