@@ -14,6 +14,7 @@ import java.util.Objects;
 @Table(name = "study_member")
 @Getter
 @Setter
+@IdClass(StudyMemberId.class)
 public class StudyMemberEntity {
     @Id
     @ManyToOne(fetch = FetchType.LAZY)

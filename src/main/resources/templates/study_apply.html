@@ -12,7 +12,7 @@
 <p>Setting Period: <span th:text="${studyDto.settingPeriod}"></span></p>
 <p>Intro: <span th:text="${studyDto.intro}"></span></p>
 <!-- 여기에 스터디 신청 버튼 추가 -->
-<form action="/study-clubs/apply" method="post">
+<form action="/study-member/apply" method="post">
     <input type="hidden" name="studyId" th:value="${studyDto.studyId}">
     <button type="submit">등록</button>
 </form>

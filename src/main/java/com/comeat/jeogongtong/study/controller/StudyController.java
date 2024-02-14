@@ -38,14 +38,10 @@ public class StudyController {
         List<StudyDto> studyList = studyService.search(keyword);
         model.addAttribute("studyList", studyList);
 
-        // 최근 검색어를 세션에 저장
-//        List<String> recentSearches = new ArrayList<>();
-//        recentSearches.add(keyword);
-//        model.addAttribute("recentSearches", recentSearches);
-
         return "search_result"; // 검색 결과 페이지로 이동
     }
 
+    /*
     @GetMapping("/apply/{studyId}")
     public String detail(@PathVariable Long studyId, Model model){
         StudyDto studyDto = studyService.findById(studyId);
@@ -57,5 +53,7 @@ public class StudyController {
     public String apply(@RequestParam Long studyId){
         return "redirect:/";
     }
+
+ */
 }
 
