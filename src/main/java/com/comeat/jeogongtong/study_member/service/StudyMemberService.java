@@ -20,7 +20,7 @@ public class StudyMemberService {
     private final StudyMemberRepository studyMemberRepository;
     private final MemberRepository memberRepository; //MemberEntity를 조회해 스터디 멤버에 등록
     private final StudyRepository studyRepository; //StudyEnetity를 조회해 스터디 멤버에 등록
-    public  void addStudyMember(Long memberId, Long studyId) { //스터디 등록
+    public  void addStudyMember(Long memberId, Long studyId) { //스터디 신청
         MemberEntity memberEntity = memberRepository.findById(memberId)
                 .orElseThrow(() -> new IllegalArgumentException("Invailid member ID : " + memberId));
         StudyEntity studyEntity = studyRepository.findById(studyId)

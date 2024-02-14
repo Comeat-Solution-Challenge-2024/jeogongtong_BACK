@@ -15,15 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class StudyMemberController {
     private final StudyMemberService studyMemberService;
 
+    /*
+    * 스터디 신청*/
     @PostMapping("/apply")
     public String apply(@RequestParam Long studyId, HttpSession session){
         // 세션에서 memberId 가져오기
-        MemberDto loginMember = (MemberDto) session.getAttribute("loginMember");
+        Long memberId = (Long) session.getAttribute("memberId");
         // 파이어베이스에 맞춰서 변경 필요할 수도
-        // loginMember 객체에서 memberId를 가져옴
-        if (loginMember != null && loginMember.getMemberId() != null) {
-            Long memberId = loginMember.getMemberId();
-
+        if (memberId != null) {
             studyMemberService.addStudyMember(memberId, studyId);
             System.out.println("스터디 등록이 완료되었습니다!");
             return "redirect:/";
