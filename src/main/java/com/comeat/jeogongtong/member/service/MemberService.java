@@ -22,12 +22,16 @@ public class MemberService {
         } else return null;
     }
 
-    public MemberDto findById(Long member_id) {
-        Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(member_id);
+    public MemberDto findById(Long memberId) {
+        Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(memberId);
         if(optionalMemberEntity.isPresent()){
             return MemberDto.toMemberDto(optionalMemberEntity.get());
         } else {
             return null;
         }
+    }
+
+    public Optional<MemberEntity> findMemberEntityById(Long memberId) {
+        return memberRepository.findById(memberId);
     }
 }

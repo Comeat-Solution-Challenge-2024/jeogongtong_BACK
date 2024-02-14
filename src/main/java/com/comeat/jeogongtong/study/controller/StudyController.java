@@ -2,6 +2,7 @@ package com.comeat.jeogongtong.study.controller;
 
 import com.comeat.jeogongtong.study.dto.StudyDto;
 import com.comeat.jeogongtong.study.service.StudyService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,9 +23,14 @@ public class StudyController {
     }
 
     @PostMapping("/regist")
-    public String regist(@ModelAttribute StudyDto studyDto) {
+    public String regist(@ModelAttribute StudyDto studyDto, HttpSession session) {
+        Long memberId = (Long) session.getAttribute("memberId");
         System.out.println("studyDto = " + studyDto);
-        studyService.regist(studyDto);
+        if (memberId == null) {
+            System.out.println("로그인 후 스터디 등록이 가능합니다");
+            return "redirect:/login";
+        }
+        studyService.regist(studyDto, memberId);
         return "redirect:/"; //홈으로 돌아가기
     }
 
@@ -41,13 +47,11 @@ public class StudyController {
         return "search_result"; // 검색 결과 페이지로 이동
     }
 
-
     @GetMapping("/apply/{studyId}")
     public String detail(@PathVariable Long studyId, Model model){
         StudyDto studyDto = studyService.findById(studyId);
         model.addAttribute("studyDto",studyDto);
         return"study_apply";
     }
-
 }
 

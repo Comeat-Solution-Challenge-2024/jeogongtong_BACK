@@ -40,7 +40,7 @@ public class StudyEntity extends BaseEntity{
         studyEntity.setName(studyDto.getName());
         studyEntity.setBook(studyDto.getBook());
         studyEntity.setCategory(studyDto.getCategory());
-        studyEntity.setSettingPeriod(studyEntity.getSettingPeriod());
+        studyEntity.setSettingPeriod(studyDto.getSettingPeriod());
         studyEntity.setRankerAsk(studyDto.getRankerAsk());
         studyEntity.setRankerAnswer(studyDto.getRankerAnswer());
         studyEntity.setIntro(studyDto.getIntro());

@@ -23,7 +23,7 @@ public class LoginController {
     public String loginProcess(@ModelAttribute MemberDto memberDto, HttpSession session){
         MemberDto loginMember = memberService.login(memberDto);
         if (loginMember != null){
-            session.setAttribute("loginMember",loginMember);
+            session.setAttribute("memberId",loginMember.getMemberId());
             System.out.println("로그인에 성공하셨습니다 " + loginMember.getNickname());
             return "redirect:/";
         } else {

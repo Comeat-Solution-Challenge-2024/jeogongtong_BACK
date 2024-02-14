@@ -10,5 +10,4 @@ import java.io.Serializable;
 public class StudyMemberId implements Serializable {
     private Long member;
     private Long study;
-
 }
