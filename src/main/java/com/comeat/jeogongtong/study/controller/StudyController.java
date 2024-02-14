@@ -41,7 +41,7 @@ public class StudyController {
         return "search_result"; // 검색 결과 페이지로 이동
     }
 
-    /*
+
     @GetMapping("/apply/{studyId}")
     public String detail(@PathVariable Long studyId, Model model){
         StudyDto studyDto = studyService.findById(studyId);
@@ -49,11 +49,5 @@ public class StudyController {
         return"study_apply";
     }
 
-    @PostMapping("/apply")
-    public String apply(@RequestParam Long studyId){
-        return "redirect:/";
-    }
-
- */
 }
 

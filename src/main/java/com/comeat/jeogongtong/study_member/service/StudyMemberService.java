@@ -29,5 +29,7 @@ public class StudyMemberService {
         studyMemberEntity.setWeektime(Time.valueOf("00:00:00"));
         studyMemberEntity.setRank(null);
         studyMemberEntity.setState("회원");
+
+        studyMemberRepository.save(studyMemberEntity); // 스터디 멤버 DB에 저장
     }
 }
