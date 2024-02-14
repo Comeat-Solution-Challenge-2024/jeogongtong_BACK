@@ -3,6 +3,7 @@ package com.comeat.jeogongtong.study.controller;
 import com.comeat.jeogongtong.member.dto.MemberDto;
 import com.comeat.jeogongtong.study.dto.StudyDto;
 import com.comeat.jeogongtong.study.service.StudyService;
+import com.comeat.jeogongtong.study_member.service.StudyMemberService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HomeController {
     private final StudyService studyService;
+    private final StudyMemberService studyMemberService;
     @GetMapping("/") //홈
     public String index(HttpSession session, Model model) {
         List<StudyDto> studyDtoList = studyService.findAll();
@@ -22,7 +24,9 @@ public class HomeController {
         model.addAttribute("studyList", studyDtoList);
 
         if (loginMember != null) {
-            model.addAttribute("member", loginMember); // 뷰로 전달
+            List<StudyDto> myStudies = studyMemberService.findMyStudies(loginMember.getMemberId());
+            model.addAttribute("myStudy", myStudies); // 내 공부방 목록 전달
+            model.addAttribute("member", loginMember);
             System.out.println(loginMember);
         }
         return "index";

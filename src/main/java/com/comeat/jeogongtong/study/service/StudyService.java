@@ -19,7 +19,7 @@ public class StudyService {
     private final StudyRepository studyRepository; //기능 구현 자체에는 문제 없음
 
     public void regist(StudyDto studyDto) {
-        StudyEntity studyEntity = StudyEntity.toRegistEntity(studyDto);
+        StudyEntity studyEntity = StudyEntity.tostudyEntity(studyDto);
         studyRepository.save(studyEntity); //자동으로 스터디 레포지토리에 상속
     }
 

@@ -15,22 +15,22 @@ import java.time.LocalDateTime;
 @AllArgsConstructor // 모든 필드를 매개변수로 하는 생성자
 public class StudyDto {
     private Long studyId;
-    private String category;
     private String name;
     private String book;
+    private String category;
     private String settingPeriod; // 기한 (일단 int로)
     private int rankerAsk; //질의응답 타입을 int로?
     private int rankerAnswer;
     private String intro;
 
-    private LocalDate CreatedTime;
+    private LocalDate createdTime;
 //    private LocalDateTime studyUpdatedTime;
     public static StudyDto toStudyDto(StudyEntity studyEntity) {
         StudyDto studyDto = new StudyDto();
         studyDto.setStudyId(studyEntity.getStudyId());
         studyDto.setName(studyEntity.getName());
-        studyDto.setCategory(studyEntity.getCategory());
         studyDto.setBook(studyEntity.getBook());
+        studyDto.setCategory(studyEntity.getCategory());
         studyDto.setSettingPeriod(studyEntity.getSettingPeriod());
         studyDto.setRankerAsk(studyEntity.getRankerAsk());
         studyDto.setRankerAnswer(studyEntity.getRankerAnswer());

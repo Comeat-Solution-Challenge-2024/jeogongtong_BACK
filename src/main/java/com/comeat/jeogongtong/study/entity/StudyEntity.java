@@ -13,11 +13,11 @@ import java.sql.Date;
 @Setter
 @Table(name = "study")
 public class StudyEntity extends BaseEntity{
-//    public class StudyEntity extends BaseEntity : 오류발생
+//   DB와 동일한 순서로 설정
     @Id //pk 컬럼 지정
     @GeneratedValue(strategy = GenerationType.IDENTITY) //increment_auto (숫자 자동 증가)
     @Column(name = "study_id")
-    private Long studyId; //study_id
+    private Long studyId;
     @Column(length = 100,nullable = false)
     private String name;
     @Column
@@ -34,12 +34,13 @@ public class StudyEntity extends BaseEntity{
     @Column(length = 500)
     private String intro;
 
-    public static StudyEntity toRegistEntity(StudyDto studyDto) {
+    public static StudyEntity tostudyEntity(StudyDto studyDto) {
         StudyEntity studyEntity = new StudyEntity();
+        studyEntity.setStudyId(studyDto.getStudyId());
         studyEntity.setName(studyDto.getName());
         studyEntity.setBook(studyDto.getBook());
         studyEntity.setCategory(studyDto.getCategory());
-        studyEntity.setSettingPeriod(studyDto.getSettingPeriod());
+        studyEntity.setSettingPeriod(studyEntity.getSettingPeriod());
         studyEntity.setRankerAsk(studyDto.getRankerAsk());
         studyEntity.setRankerAnswer(studyDto.getRankerAnswer());
         studyEntity.setIntro(studyDto.getIntro());
