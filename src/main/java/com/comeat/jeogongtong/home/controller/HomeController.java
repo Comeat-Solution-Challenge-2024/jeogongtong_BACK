@@ -1,4 +1,4 @@
-package com.comeat.jeogongtong.study.controller;
+package com.comeat.jeogongtong.home.controller;
 
 import com.comeat.jeogongtong.member.dto.MemberDto;
 import com.comeat.jeogongtong.member.service.MemberService;
